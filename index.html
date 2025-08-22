@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Speak Decoder with OpenFDA Chatbot</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-stethoscope"></i> Doctor Speak Decoder with OpenFDA Chatbot</h1>
+            <p>Upload your prescription and get plain English explanations</p>
+        </header>
+
+        <main>
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <h2>Upload Prescription Image (JPG, PNG, PDF)</h2>
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag and drop your prescription image here, or click to browse</p>
+                    <input type="file" id="fileInput" accept="image/*,.pdf" hidden>
+                    <button class="btn-primary" id="processBtn">Choose File & Process</button>
+                </div>
+                <div class="status" id="status"></div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="results" style="display: none;">
+                <h2>Extracted Text</h2>
+                <pre id="extractedText"></pre>
+
+                <h2>Identified Drugs & Basic Info</h2>
+                <div id="drugInfo"></div>
+            </section>
+
+            <!-- Chat Section -->
+            <section class="chat-section" id="chatSection" style="display: none;">
+                <h2><i class="fas fa-comments"></i> Chatbot - Ask About Your Medications</h2>
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatBox"></div>
+                    <div class="chat-input">
+                        <input type="text" id="chatInput" placeholder="Ask about your medications, side effects, interactions...">
+                        <button id="sendChat" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Disclaimer -->
+            <section class="disclaimer">
+                <div class="disclaimer-content">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div>
+                        <h4>Medical Disclaimer</h4>
+                        <p>This tool is for informational purposes only. Always consult with your healthcare provider for medical advice.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
